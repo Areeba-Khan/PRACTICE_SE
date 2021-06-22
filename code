@@ -1,0 +1,16 @@
+#include <stdio.h>
+#include <string.h>
+int main(int argc, char *argv[]) {
+ int value = 5;
+ char var_one[8], var_two[8];
+ strcpy(var_one, "one"); 
+ strcpy(var_two, "two"); 
+ printf("[BEFORE] var_two is at %p and contains \'%s\'\n", var_two, var_two);
+ printf("[BEFORE] var_one is at %p and contains \'%s\'\n", var_one, var_one);
+ printf("[BEFORE] value is at %p and is %d (0x%08x)\n", &value, value, value);
+ printf("\n[STRCPY] copying %d bytes into var_two\n\n", strlen(argv[1]));
+ strcpy(var_two, argv[1]); 
+ printf("[AFTER] var_two is at %p and contains \'%s\'\n", var_two, var_two);
+ printf("[AFTER] var_one is at %p and contains \'%s\'\n", var_one, var_one);
+ printf("[AFTER] value is at %p and is %d (0x%08x)\n", &value, value, value);
+}
